@@ -4,6 +4,7 @@ Author: Martin Len
 The operating system that this program was developed on is MAC OS X Version 10.7.5
 
 Execution Instructions:
+
 1. Setup the JDBC driver. This program will not work without it.
 2. Install MySQL.
 3. Open up MySQLDatabase.java and change the user name and password to the one set on MySQL.
