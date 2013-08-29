@@ -1,27 +1,23 @@
 Author: Martin Len
-The operating system that this program was developed on is MAC OS X
-Version 10.7.5
+The operating system that this program was developed on is MAC OS X Version 10.7.5
 
 Execution Instructions:
 1. Setup the JDBC driver. This program will not work without it.
 2. Install MySQL.
-3. Open up MySQLDatabase.java and change the user name and password to the
-one set on MySQL.
+3. Open up MySQLDatabase.java and change the user name and password to the one set on MySQL.
 4. At the command line, compile the program using "javac *.java"
-5. At the command line, run the program using
-"java DirectoryTraversal <directory> <numThreads> <executionTime>"
+5. At the command line, run the program using "java DirectoryTraversal <directory> <numThreads> <executionTime>"
 
 Note:
-1. This program intentionally ignores the directory that is passed in
-as an input argument when storing files in the database i.e. only the
-subdirectories in the input directory will be considered as the top level.
-2. If numThreads is less than or equal to 0, an error will be printed.
-The program will continue executing using a default of 5 threads.
+1. This program intentionally ignores the directory that is passed in as an input argument when storing files in the
+database i.e. only the subdirectories in the input directory will be considered as the top level.
+2. If numThreads is less than or equal to 0, an error will be printed. The program will continue executing using a
+default of 5 threads.
 3. The executionTime is in milliseconds.
-4. If executionTime is less than or equal to 0, an error will be
-printed. The program will continue executing using a default of 1000 ms.
-5. This program assumes that a database table "files" does not already
-exist in the set of mysql tables and creates the database table files.
+4. If executionTime is less than or equal to 0, an error will be printed. The program will continue executing using a
+default of 1000 ms.
+5. This program assumes that a database table "files" does not already exist in the set of mysql tables and creates the
+database table files.
 6. The counts are contained in an output file "counts.txt"
 
 How to install JDBC driver using the command line:
@@ -32,23 +28,15 @@ Note: I've included the folder "mysql=connector-java-5.1.26" in my
 submission.
 
 Sample Data Set:
-1. The "test1" directory contains the directory structure that was given to
-me in the problem statement. The program should generate the same results as
-described in the problem.
+1. The "test1" directory contains the directory structure that was given to me in the problem statement. The program
+should generate the same results as described in the problem.
 expected in counts.txt:
 john - 6
 mark - 6
 sally - 5
 
-2. The "test2" directory is an empty directory. After running the program
-on this directory, there should be an empty database and empty counts.txt
-file.
-expected in counts.txt:
-
-
-3. The "test3" directory contains only files. After running the program on
-this directory, there should be three entries in the database and three
-filenames with a count of 1 in the output file.
+2. The "test3" directory contains only files. After running the program on this directory, there should be three entries
+in the database and three filenames with a count of 1 in the output file.
 expected in counts.txt:
 bob - 1
 john - 1
@@ -60,5 +48,5 @@ bob      | bob
 john     | john
 sally    | sally
 
-Note: Before you run the program, make sure that the database "files" does
-not already exist. If it does exist type "DROP Database files;" in MySQL.
+Note: Before you run the program, make sure that the database "files" does not already exist. If it does exist type
+"DROP Database files;" in MySQL.
