@@ -1,0 +1,8 @@
+*.o
+*.swo
+*.swp
+*~
+*.class
+*Test.java
+*.DS_Store
+*.pyc
