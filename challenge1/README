@@ -14,8 +14,8 @@ Note:
 files in the database i.e. only the subdirectories in the input directory will be considered as the top level.
 2. If numThreads is less than or equal to 0, an error will be printed. The program will continue executing using a default of 5 threads.
 3. The executionTime is in milliseconds.
-4. If executionTime is less than or equal to 0, an error will be printed. The program will continue executing using a default of 1000
-ms.
+4. If executionTime is less than or equal to 0, an error will be printed. The program will continue
+executing using a default of 1000 ms.
 5. This program assumes that a database table "files" does not already exist in the set of mysql tables
 and creates the database table files.
 6. The counts are contained in an output file "counts.txt"
