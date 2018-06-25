@@ -8,10 +8,11 @@ class Db:
 		self.connection = mysql.connector.connect(**properties)
 
 	def insert(self, sql):
-		print(sql)
+		self.execute(sql)
+		self.connection.commit()
 
 	def update(self, sql):
-		print(sql)
+		self.execute(sql)
 
 	def select(self, sql):
 		print(sql)
@@ -23,4 +24,6 @@ class Db:
 			cursor.execute(sql)
 		except mysql.connector.Error as err:
 			print("Error executing: " + sql)
+			print(err)
+		print(cursor.lastrowid)
 		cursor.close()
