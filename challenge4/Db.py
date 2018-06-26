@@ -25,5 +25,4 @@ class Db:
 		except mysql.connector.Error as err:
 			print("Error executing: " + sql)
 			print(err)
-		print(cursor.lastrowid)
 		cursor.close()
