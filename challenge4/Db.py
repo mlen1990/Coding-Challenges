@@ -13,10 +13,16 @@ class Db:
 
 	def update(self, sql):
 		self.execute(sql)
+		self.connection.commit()
 
-	def select(self, sql):
-		print(sql)
+	def select(self, sql, as_dictionary=True):
+		cursor = self.connection.cursor(dictionary=as_dictionary)
 
+		cursor.execute(sql)
+
+		rows = cursor.fetchall()
+		cursor.close()
+		return rows;
 
 	def execute(self, sql):
 		cursor = self.connection.cursor()
