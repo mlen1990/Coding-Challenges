@@ -24,21 +24,20 @@ for data_file in data_files:
 	file_map[file_info[0]].append(data_file)
 
 for spec_filename in spec_files:
-	with open("specs/" + spec_filename, "rb") as spec_file:
+	with open("specs/" + spec_filename, "rt") as spec_file:
 		filename_info = spec_filename.split(".")
 		file = csv.reader(spec_file, delimiter=",")
-		file.next() # Skip first row
+		next(file) # Skip first row
 		columns = []
 		create_table_sql = "CREATE TABLE " + filename_info[0] + "(id INT NOT NULL AUTO_INCREMENT"
 		for column in file:
 			create_table_sql += ", {} {}".format(column[0], column[2])
 			columns.append({"name": column[0], "width": int(column[1]), "data_type": column[2]})
 		create_table_sql += ", PRIMARY KEY (id));"
-		# print(create_table_sql)
 		db.execute(create_table_sql);
 		if filename_info[0] in file_map:
 			for data_filename in file_map[filename_info[0]]:
-				with open("data/" + data_filename, "rb") as data_file:
+				with open("data/" + data_filename, "rt") as data_file:
 					for line in data_file:
 						sql = "INSERT INTO " + filename_info[0] + " SET "
 						index = 0

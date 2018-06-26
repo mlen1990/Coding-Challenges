@@ -26,16 +26,16 @@ class Test_testformat1:
 			file_map[file_info[0]].append(data_file)
 
 		for spec_filename in spec_files:
-			with open("specs/" + spec_filename, "rb") as spec_file:
+			with open("specs/" + spec_filename, "rt") as spec_file:
 				filename_info = spec_filename.split(".")
 				file = csv.reader(spec_file, delimiter=",")
-				file.next() # Skip first row
+				next(file) # Skip first row
 				columns = []
 				for column in file:
 					columns.append({"name": column[0], "width": int(column[1]), "data_type": column[2]})
 				if filename_info[0] in file_map:
 					for data_filename in file_map[filename_info[0]]:
-						with open("data/" + data_filename, "rb") as data_file:
+						with open("data/" + data_filename, "rt") as data_file:
 							for line in data_file:
 								sql = "SELECT count(*) as total FROM {} WHERE ".format(filename_info[0])
 								index = 0
