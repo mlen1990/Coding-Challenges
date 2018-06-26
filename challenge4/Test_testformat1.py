@@ -9,7 +9,8 @@ class Test_testformat1:
 		function_map = {
 			"TEXT": str,
 			"INTEGER": int,
-			"BOOLEAN": int
+			"BOOLEAN": int,
+			"DATE": str
 		}
 
 		properties = Properties.getProperties()

@@ -1,0 +1,4 @@
+"column name",width,datatype
+date,10,DATE
+valid,1,BOOLEAN
+name,10,TEXT
