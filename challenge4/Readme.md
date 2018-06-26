@@ -1,6 +1,6 @@
 # Stack
 * Python3
-* MySQL
+* MySQL (user: root, password: test123)
 
 # Setup
 * Run `./configure.sh` at the command line to install the python3 mysql connector
